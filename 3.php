@@ -9,13 +9,13 @@
     require_once('math.php');
 
     // Вывод "шапки"
-    echo ('<h4>Задание 3:</h4>');
-    echo('<hr>');
+    echo '<h4>Задание 3:</h4>';
+    echo '<hr>';
     echo '<p>
             Реализуйте основные 4 арифметические операции (+, -, *, /) в виде функций с
             двумя параметрами. Обязательно используйте оператор return.
           </p>';
-    echo('<hr>');
+    echo '<hr>';
     echo '<p>
             Для корректного вызова в адресной строке открывшегося окна браузера необходимо ввести данные,
             например - "http://{url}/3.php?x=16&y=3"
@@ -33,8 +33,8 @@
     /*
      * Вызов функций
      * */
-    echo ("$x + $y = ");echo addition($x, $y);echo ("<br>");
-    echo ("$x - $y = ");echo substruction($x, $y);echo ("<br>");
-    echo ("$x * $y = ");echo multiplication($x, $y);echo ("<br>");
-    echo ("$x / $y = ");echo division($x, $y);echo ("<br>");
+    echo '$x + $y = ';echo addition($x, $y);echo '<br>';
+    echo '$x - $y = ';echo substruction($x, $y);echo '<br>';
+    echo '$x * $y = ';echo multiplication($x, $y);echo '<br>';
+    echo '$x / $y = ';echo division($x, $y);echo '<br>';
     echo '<hr>';
