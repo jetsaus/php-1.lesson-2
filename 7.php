@@ -80,4 +80,4 @@
     date_default_timezone_set('Asia/Irkutsk');
     echo ("Текущее системное время: ");
     echo myTime();
-?>
+    echo '<hr>';

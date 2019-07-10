@@ -48,20 +48,12 @@
     echo('<br>');
 
     // Передача параметров с проверкой на их наличие, т.е. то, что эти параметры были переданы скрипту через браузер
-    if (empty($_GET['x'])) {
-        $x = 0;
-    } else {
-        $x = $_GET['x'];
-    }
-    if (empty($_GET['y'])) {
-        $y = 0;
-    } else {
-        $y = $_GET['y'];
-    }
-
-    echo ('$x = ' . "$x<br>");
-    echo ('$y = ' . "$y<br>");
-    echo ('<br>');
+    $x = $_GET['x'] ?? 0;
+    $y = $_GET['y'] ?? 0;
+    
+    echo '$x = ' . "$x<br>";
+    echo '$y = ' . "$y<br>";
+    echo '<br>';
 
 
     /*
@@ -71,4 +63,4 @@
     echo ("$x - $y = ");echo Substruction($x, $y);echo ("<br>");
     echo ("$x * $y = ");echo Multiplication($x, $y);echo ("<br>");
     echo ("$x / $y = ");echo Division($x, $y);echo ("<br>");
-?>
+
