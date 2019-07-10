@@ -13,7 +13,8 @@
  * $arg2        -   второй операнд
  * $operation   -   математическая операция
  */
-    function mathOperation($arg1, $arg2, $operation) {
+    function mathOperation($arg1, $arg2, $operation)
+    {
         define("MATH_ADD", '+');
         define("MATH_SUB", '-');
         define("MATH_MUL", '*');

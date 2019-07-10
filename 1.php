@@ -36,12 +36,13 @@
     echo('$a = ' . "$a" . "<br>");
     echo('$b = ' . "$b" . "<br>");
     echo('<br>');
-    if (($a >= 0) AND ($b >= 0))
+    if (($a >= 0) AND ($b >= 0)) {
         echo('$a - $b = ' . ($a - $b) . "<br>");
-    elseif (($a < 0) AND ($b < 0))
+    }
+    elseif (($a < 0) AND ($b < 0)) {
         echo('$a * $b = ' . ($a * $b) . "<br>");
-    elseif ((($a >= 0) AND ($b < 0)) OR (($a < 0) AND ($b >= 0)))
+    }
+    elseif ((($a >= 0) AND ($b < 0)) OR (($a < 0) AND ($b >= 0))) {
         echo('$a + $b = ' . ($a + $b) . "<br>");
-    else
-        echo('Значения $a и $b не попадают ни в какой диапазон.');
+    }
     echo('<hr>');
