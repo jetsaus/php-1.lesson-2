@@ -5,33 +5,8 @@
  * Реализуйте основные 4 арифметические операции (+, -, *, /) в виде функций с
  * двумя параметрами. Обязательно используйте оператор return.
  */
-    /*
-     * Реализация функций
-     */
-    // Сложение
-    function Addition($x = 0, $y = 0)
-    {
-        return ($x + $y);
-    }
-    // Вычитание
-    function Substruction($x = 0, $y = 0)
-    {
-        return ($x - $y);
-    }
-    // Умножение
-    function Multiplication($x = 0, $y = 0)
-    {
-        return ($x * $y);
-    }
-    // Деление
-    function Division($x = 0, $y = 1)
-    {
-        if($y == 0) {
-            echo('На \'0\' делить нельзя!');
-        }else{
-            return ($x / $y);
-        }
-    }
+    // Подключим модуль с математическими функциями
+    require_once('math.php');
 
     // Вывод "шапки"
     echo ('<h4>Задание 3:</h4>');
@@ -58,8 +33,8 @@
     /*
      * Вызов функций
      * */
-    echo ("$x + $y = ");echo Addition($x, $y);echo ("<br>");
-    echo ("$x - $y = ");echo Substruction($x, $y);echo ("<br>");
-    echo ("$x * $y = ");echo Multiplication($x, $y);echo ("<br>");
-    echo ("$x / $y = ");echo Division($x, $y);echo ("<br>");
+    echo ("$x + $y = ");echo addition($x, $y);echo ("<br>");
+    echo ("$x - $y = ");echo substruction($x, $y);echo ("<br>");
+    echo ("$x * $y = ");echo multiplication($x, $y);echo ("<br>");
+    echo ("$x / $y = ");echo division($x, $y);echo ("<br>");
     echo '<hr>';
