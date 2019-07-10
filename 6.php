@@ -14,7 +14,6 @@
         } elseif ($pow < 0) {
             return power(1 / $val, -$pow);
         } else {
-        }
             return $val * power($val, $pow - 1);
         }
     }
