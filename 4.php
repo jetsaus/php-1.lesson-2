@@ -13,12 +13,14 @@
  * $arg2        -   второй операнд
  * $operation   -   математическая операция
  */
+// Зададим константы математических операций
+define("MATH_ADD", '+');
+define("MATH_SUB", '-');
+define("MATH_MUL", '*');
+define("MATH_DIV", '/');
+
     function mathOperation($arg1, $arg2, $operation)
     {
-        define("MATH_ADD", '+');
-        define("MATH_SUB", '-');
-        define("MATH_MUL", '*');
-        define("MATH_DIV", '/');
         // Подключим модуль с математическими операциями
         require_once('math.php');
         // Вызываем операции в зависимости от переданного параметра
