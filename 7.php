@@ -24,39 +24,25 @@
             date.</blockquote>
           </p>';
     echo '<hr>';
-    
-    // Функция определения правильного склонения русского языка для часов
-    // Исходя из постановки задачи гарантированно корректно обрабатывает интервал от 0 до 24 часов
-    function decHour($hour = 0)
-    {
 
-        if (($hour == 1) OR ($hour == 21)) {
-            $hours = "час";
-        }
-        elseif ((($hour >= 2) AND ($hour <= 4)) OR (($hour >= 22) AND ($hour <= 24))) {
-            $hours = "часа";
-        }
-        else {
-            $hours = "часов";
-        }
-        return $hours;
-    }
-    // Функция определения правильного склонения русского языка для минут
-    // Исходя из постановки задачи гарантированно корректно обрабатывает интервал от 0 до 60 минут
-    function decMinute($minute = 0)
+    // Функция определения правильного склонения русского языка для числительных
+    /*
+     * $count   -   числительное
+     * $form1, $form2, $form3 - формы склонения чмслительных
+     * Контрольный пример вызова:
+        $count = 7;
+        echo $count . ' ' . formatByCount($count, 'час', 'часа', 'часов');
+    */
+    function formatByCount($count, $form1, $form2, $form3)
     {
-        $remDiv = $minute % 10;
-        if (($remDiv == 1) AND ($minute != 11)) {
-            $minutes = "минута";
-        }
-        elseif (($remDiv == 0) OR (($remDiv >= 5) AND ($remDiv <= 9)) OR (($minute >= 11) AND ($minute <= 14))) {
-            $minutes = "минут";
-        }
-        else  {
-            $minutes = "минуты";
-        }
-        return $minutes;
+        $count = abs($count) % 100;
+        $lcount = $count % 10;
+        if ($count >= 11 && $count <= 19) return($form3);
+        if ($lcount >= 2 && $lcount <= 4) return($form2);
+        if ($lcount == 1) return($form1);
+        return $form3;
     }
+    
     
     //Функция вычисляет текущее время и возвращает его в формате с правильными склонениями в строковую переменную
     //Проверка функций определения склонения часов и минут
@@ -65,11 +51,11 @@
         $strTime = '';
         $strTime .= date('G');
         $strTime .= ' ';
-        $strTime .= decHour(date('G'));
+        $strTime .= formatByCount(date('G'), 'час', 'часа', 'часов');
         $strTime .= ' ';
         $strTime .= date('i');
         $strTime .= ' ';
-        $strTime .= decMinute(date('i'));
+        $strTime .= formatByCount(date('i'), 'минута', 'минуты', 'минут');
         $strTime .= "<br>";
         return $strTime;
     }
